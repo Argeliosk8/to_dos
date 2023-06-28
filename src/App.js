@@ -37,7 +37,9 @@ function App() {
     return todos.map((todo, key)=>{
       return (
         <ToDos key={key} todo={todo}>
-          <button onClick={()=>deleteTodo(todo)}>X</button>        
+          <button id="deletebutton"onClick={()=>deleteTodo(todo)}>
+          <span class="material-symbols-outlined">delete_forever</span>
+          </button>        
         </ToDos>
       )
     })
@@ -45,11 +47,16 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Your to-do's!</h1>
       <form onSubmit={addTodo}>
             <input type="text" onChange={handleChange} id='todoInput'></input>
-            <input type='submit' value="add" ></input>
+            <button id='addbutton'>
+            <span class="material-symbols-outlined">add_comment</span>
+            </button>
       </form>
-      {renderTo_Dos()}
+      <div className='divtodo'>
+        {renderTo_Dos()}
+      </div>
     </div>
   );
 }
