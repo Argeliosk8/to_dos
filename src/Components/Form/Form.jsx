@@ -9,9 +9,8 @@ function Form({todos, setTodos, newTodo, setNewTodo}){
     function addTodo(e){
         e.preventDefault()
         if(newTodo !== "" && !todos.includes(newTodo)){
-          setTodos(oldTodo=>[...oldTodo, newTodo])
+          setTodos(oldTodo =>[...oldTodo, newTodo])
           document.getElementById("todoInput").value = ""
-          setNewTodo("")
         } 
         
         if (newTodo === "") {
